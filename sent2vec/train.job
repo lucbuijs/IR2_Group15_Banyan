@@ -1,0 +1,40 @@
+#!/bin/bash
+#SBATCH --job-name=sent2vec_train
+#SBATCH --time=02:00:00
+#SBATCH --cpus-per-task=16
+#SBATCH --partition=gpu_a100
+#SBATCH --output=logs/%x/%j.out
+
+module purge
+module load 2024
+module load GCC/12.2.0        # needed to compile
+module load CMake/3.27.1
+module load Python/3.11.3
+
+# Move to your project root
+cd ~/Repo_Author/Banyan
+
+cd sent2vec
+
+# Build C++ training binary (only first time)
+mkdir -p build
+cd build
+cmake ..
+make -j16
+
+# Go back to project root to access data and save model
+cd ~/Repo_Author/Banyan
+
+# Create output folder for trained baseline models
+mkdir -p checkpoints/sent2vec
+
+# Train Sent2Vec
+./sent2vec/build/sent2vec \
+    --input data/en_train.txt \
+    --output checkpoints/sent2vec/en \
+    --dim 600 \
+    --epoch 10 \
+    --minCount 5 \
+    --numThreads 16
+
+echo "Sent2Vec training finished!"
