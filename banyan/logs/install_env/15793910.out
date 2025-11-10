@@ -1,0 +1,354 @@
+============================================================================================== 
+Warning! Mixing Conda and module environments may lead to corruption of the
+user environment. 
+We do not recommend users mixing those two environments unless absolutely
+necessary. Note that 
+SURF does not provide any support for Conda environment.
+For more information, please refer to our software policy page:
+https://servicedesk.surf.nl/wiki/display/WIKI/Software+policy+Snellius#SoftwarepolicySnellius-UseofAnacondaandMinicondaenvironmentsonSnellius 
+
+Remember that many packages have already been installed on the system and can
+be loaded using 
+the 'module load <package__name>' command. If you are uncertain if a package is
+already available 
+on the system, please use 'module avail' or 'module spider' to search for it.
+============================================================================================== 
+Channels:
+ - anaconda
+ - pytorch
+ - dglteam/label/cu118
+ - nvidia
+ - defaults
+Platform: linux-64
+Collecting package metadata (repodata.json): ...working... done
+Solving environment: ...working... done
+
+Downloading and Extracting Packages: ...working... done
+Preparing transaction: ...working... done
+Verifying transaction: ...working... done
+Executing transaction: ...working... done
+Installing pip dependencies: ...working... Ran pip subprocess with arguments:
+['/home/scur1700/.conda/envs/banyan/bin/python', '-m', 'pip', 'install', '-U', '-r', '/gpfs/home4/scur1700/Repo_Author/Banyan/condaenv.36hnhsbx.requirements.txt', '--exists-action=b']
+Pip subprocess output:
+Collecting aiofiles==23.2.1 (from -r /gpfs/home4/scur1700/Repo_Author/Banyan/condaenv.36hnhsbx.requirements.txt (line 1))
+  Downloading aiofiles-23.2.1-py3-none-any.whl.metadata (9.7 kB)
+Collecting alembic==1.13.1 (from -r /gpfs/home4/scur1700/Repo_Author/Banyan/condaenv.36hnhsbx.requirements.txt (line 2))
+  Downloading alembic-1.13.1-py3-none-any.whl.metadata (7.4 kB)
+Collecting annotated-types==0.6.0 (from -r /gpfs/home4/scur1700/Repo_Author/Banyan/condaenv.36hnhsbx.requirements.txt (line 3))
+  Downloading annotated_types-0.6.0-py3-none-any.whl.metadata (12 kB)
+Collecting anyio==4.2.0 (from -r /gpfs/home4/scur1700/Repo_Author/Banyan/condaenv.36hnhsbx.requirements.txt (line 4))
+  Downloading anyio-4.2.0-py3-none-any.whl.metadata (4.6 kB)
+Collecting autobahn==24.4.2 (from -r /gpfs/home4/scur1700/Repo_Author/Banyan/condaenv.36hnhsbx.requirements.txt (line 5))
+  Downloading autobahn-24.4.2-py2.py3-none-any.whl.metadata (18 kB)
+Collecting automat==24.8.1 (from -r /gpfs/home4/scur1700/Repo_Author/Banyan/condaenv.36hnhsbx.requirements.txt (line 6))
+  Downloading Automat-24.8.1-py3-none-any.whl.metadata (8.4 kB)
+Collecting base58==2.0.1 (from -r /gpfs/home4/scur1700/Repo_Author/Banyan/condaenv.36hnhsbx.requirements.txt (line 7))
+  Downloading base58-2.0.1-py3-none-any.whl.metadata (540 bytes)
+Collecting beir==2.0.0 (from -r /gpfs/home4/scur1700/Repo_Author/Banyan/condaenv.36hnhsbx.requirements.txt (line 8))
+  Downloading beir-2.0.0.tar.gz (53 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 53.6/53.6 kB 55.6 kB/s eta 0:00:00
+  Preparing metadata (setup.py): started
+  Preparing metadata (setup.py): finished with status 'done'
+Collecting bottleneck==1.3.6 (from -r /gpfs/home4/scur1700/Repo_Author/Banyan/condaenv.36hnhsbx.requirements.txt (line 9))
+  Downloading Bottleneck-1.3.6.tar.gz (103 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 103.1/103.1 kB 120.9 kB/s eta 0:00:00
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Getting requirements to build wheel: started
+  Getting requirements to build wheel: finished with status 'done'
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Collecting bpemb==0.3.6 (from -r /gpfs/home4/scur1700/Repo_Author/Banyan/condaenv.36hnhsbx.requirements.txt (line 10))
+  Downloading bpemb-0.3.6-py3-none-any.whl.metadata (19 kB)
+Collecting cachetools==5.3.2 (from -r /gpfs/home4/scur1700/Repo_Author/Banyan/condaenv.36hnhsbx.requirements.txt (line 11))
+  Downloading cachetools-5.3.2-py3-none-any.whl.metadata (5.2 kB)
+Collecting constantly==23.10.4 (from -r /gpfs/home4/scur1700/Repo_Author/Banyan/condaenv.36hnhsbx.requirements.txt (line 12))
+  Downloading constantly-23.10.4-py3-none-any.whl.metadata (1.8 kB)
+Collecting datasets==2.19.2 (from -r /gpfs/home4/scur1700/Repo_Author/Banyan/condaenv.36hnhsbx.requirements.txt (line 13))
+  Downloading datasets-2.19.2-py3-none-any.whl.metadata (19 kB)
+Collecting elasticsearch==7.9.1 (from -r /gpfs/home4/scur1700/Repo_Author/Banyan/condaenv.36hnhsbx.requirements.txt (line 14))
+  Downloading elasticsearch-7.9.1-py2.py3-none-any.whl.metadata (8.0 kB)
+Collecting faiss-cpu==1.9.0.post1 (from -r /gpfs/home4/scur1700/Repo_Author/Banyan/condaenv.36hnhsbx.requirements.txt (line 15))
+  Downloading faiss_cpu-1.9.0.post1-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.4 kB)
+Collecting fastapi==0.109.2 (from -r /gpfs/home4/scur1700/Repo_Author/Banyan/condaenv.36hnhsbx.requirements.txt (line 16))
+  Downloading fastapi-0.109.2-py3-none-any.whl.metadata (25 kB)
+Collecting gensim==4.3.2 (from -r /gpfs/home4/scur1700/Repo_Author/Banyan/condaenv.36hnhsbx.requirements.txt (line 17))
+  Downloading gensim-4.3.2-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (8.3 kB)
+Collecting greenlet==3.0.3 (from -r /gpfs/home4/scur1700/Repo_Author/Banyan/condaenv.36hnhsbx.requirements.txt (line 18))
+  Downloading greenlet-3.0.3-cp311-cp311-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl.metadata (3.8 kB)
+Collecting grpcio==1.60.1 (from -r /gpfs/home4/scur1700/Repo_Author/Banyan/condaenv.36hnhsbx.requirements.txt (line 19))
+  Downloading grpcio-1.60.1-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.0 kB)
+Collecting h11==0.14.0 (from -r /gpfs/home4/scur1700/Repo_Author/Banyan/condaenv.36hnhsbx.requirements.txt (line 20))
+  Downloading h11-0.14.0-py3-none-any.whl.metadata (8.2 kB)
+Collecting huggingface-hub==0.27.1 (from -r /gpfs/home4/scur1700/Repo_Author/Banyan/condaenv.36hnhsbx.requirements.txt (line 21))
+  Downloading huggingface_hub-0.27.1-py3-none-any.whl.metadata (13 kB)
+Collecting humanize==4.11.0 (from -r /gpfs/home4/scur1700/Repo_Author/Banyan/condaenv.36hnhsbx.requirements.txt (line 22))
+  Downloading humanize-4.11.0-py3-none-any.whl.metadata (7.8 kB)
+Collecting hyperlink==21.0.0 (from -r /gpfs/home4/scur1700/Repo_Author/Banyan/condaenv.36hnhsbx.requirements.txt (line 23))
+  Downloading hyperlink-21.0.0-py2.py3-none-any.whl.metadata (1.5 kB)
+Collecting incremental==24.7.2 (from -r /gpfs/home4/scur1700/Repo_Author/Banyan/condaenv.36hnhsbx.requirements.txt (line 24))
+  Downloading incremental-24.7.2-py3-none-any.whl.metadata (8.1 kB)
+Collecting iniconfig==2.1.0 (from -r /gpfs/home4/scur1700/Repo_Author/Banyan/condaenv.36hnhsbx.requirements.txt (line 25))
+  Downloading iniconfig-2.1.0-py3-none-any.whl.metadata (2.7 kB)
+Collecting iterable-io==1.0.0 (from -r /gpfs/home4/scur1700/Repo_Author/Banyan/condaenv.36hnhsbx.requirements.txt (line 26))
+  Downloading iterable_io-1.0.0-py3-none-any.whl.metadata (3.7 kB)
+Collecting magic-wormhole==0.17.0 (from -r /gpfs/home4/scur1700/Repo_Author/Banyan/condaenv.36hnhsbx.requirements.txt (line 27))
+  Downloading magic_wormhole-0.17.0-py3-none-any.whl.metadata (4.5 kB)
+Collecting mako==1.3.2 (from -r /gpfs/home4/scur1700/Repo_Author/Banyan/condaenv.36hnhsbx.requirements.txt (line 28))
+  Downloading Mako-1.3.2-py3-none-any.whl.metadata (2.9 kB)
+Collecting nltk==3.9.1 (from -r /gpfs/home4/scur1700/Repo_Author/Banyan/condaenv.36hnhsbx.requirements.txt (line 29))
+  Downloading nltk-3.9.1-py3-none-any.whl.metadata (2.9 kB)
+Collecting packaging==23.2 (from -r /gpfs/home4/scur1700/Repo_Author/Banyan/condaenv.36hnhsbx.requirements.txt (line 30))
+  Downloading packaging-23.2-py3-none-any.whl.metadata (3.2 kB)
+Collecting pandas==2.2.2 (from -r /gpfs/home4/scur1700/Repo_Author/Banyan/condaenv.36hnhsbx.requirements.txt (line 31))
+  Downloading pandas-2.2.2-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (19 kB)
+Collecting pluggy==1.5.0 (from -r /gpfs/home4/scur1700/Repo_Author/Banyan/condaenv.36hnhsbx.requirements.txt (line 32))
+  Downloading pluggy-1.5.0-py3-none-any.whl.metadata (4.8 kB)
+Collecting protobuf==4.25.2 (from -r /gpfs/home4/scur1700/Repo_Author/Banyan/condaenv.36hnhsbx.requirements.txt (line 33))
+  Downloading protobuf-4.25.2-cp37-abi3-manylinux2014_x86_64.whl.metadata (541 bytes)
+Collecting pyarrow==16.1.0 (from -r /gpfs/home4/scur1700/Repo_Author/Banyan/condaenv.36hnhsbx.requirements.txt (line 34))
+  Downloading pyarrow-16.1.0-cp311-cp311-manylinux_2_28_x86_64.whl.metadata (3.0 kB)
+Collecting pyarrow-hotfix==0.6 (from -r /gpfs/home4/scur1700/Repo_Author/Banyan/condaenv.36hnhsbx.requirements.txt (line 35))
+  Downloading pyarrow_hotfix-0.6-py3-none-any.whl.metadata (3.6 kB)
+Collecting pyasn1==0.6.1 (from -r /gpfs/home4/scur1700/Repo_Author/Banyan/condaenv.36hnhsbx.requirements.txt (line 36))
+  Downloading pyasn1-0.6.1-py3-none-any.whl.metadata (8.4 kB)
+Collecting pyasn1-modules==0.4.1 (from -r /gpfs/home4/scur1700/Repo_Author/Banyan/condaenv.36hnhsbx.requirements.txt (line 37))
+  Downloading pyasn1_modules-0.4.1-py3-none-any.whl.metadata (3.5 kB)
+Collecting pydantic==2.6.1 (from -r /gpfs/home4/scur1700/Repo_Author/Banyan/condaenv.36hnhsbx.requirements.txt (line 38))
+  Downloading pydantic-2.6.1-py3-none-any.whl.metadata (83 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 83.5/83.5 kB 16.4 MB/s eta 0:00:00
+Collecting pydantic-core==2.16.2 (from -r /gpfs/home4/scur1700/Repo_Author/Banyan/condaenv.36hnhsbx.requirements.txt (line 39))
+  Downloading pydantic_core-2.16.2-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (6.5 kB)
+Collecting pykan==0.0.2 (from -r /gpfs/home4/scur1700/Repo_Author/Banyan/condaenv.36hnhsbx.requirements.txt (line 40))
+  Downloading pykan-0.0.2-py3-none-any.whl.metadata (2.2 kB)
+Collecting pynacl==1.5.0 (from -r /gpfs/home4/scur1700/Repo_Author/Banyan/condaenv.36hnhsbx.requirements.txt (line 41))
+  Downloading PyNaCl-1.5.0-cp36-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.manylinux_2_24_x86_64.whl.metadata (8.6 kB)
+Collecting pytest==8.3.5 (from -r /gpfs/home4/scur1700/Repo_Author/Banyan/condaenv.36hnhsbx.requirements.txt (line 42))
+  Downloading pytest-8.3.5-py3-none-any.whl.metadata (7.6 kB)
+Collecting pytrec-eval==0.5 (from -r /gpfs/home4/scur1700/Repo_Author/Banyan/condaenv.36hnhsbx.requirements.txt (line 43))
+  Downloading pytrec_eval-0.5.tar.gz (15 kB)
+  Preparing metadata (setup.py): started
+  Preparing metadata (setup.py): finished with status 'done'
+Collecting requests==2.32.3 (from -r /gpfs/home4/scur1700/Repo_Author/Banyan/condaenv.36hnhsbx.requirements.txt (line 44))
+  Downloading requests-2.32.3-py3-none-any.whl.metadata (4.6 kB)
+Collecting restrictedpython==7.0 (from -r /gpfs/home4/scur1700/Repo_Author/Banyan/condaenv.36hnhsbx.requirements.txt (line 45))
+  Downloading RestrictedPython-7.0-py3-none-any.whl.metadata (12 kB)
+Collecting safetensors==0.5.2 (from -r /gpfs/home4/scur1700/Repo_Author/Banyan/condaenv.36hnhsbx.requirements.txt (line 46))
+  Downloading safetensors-0.5.2-cp38-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (3.8 kB)
+Collecting scikit-learn==1.6.1 (from -r /gpfs/home4/scur1700/Repo_Author/Banyan/condaenv.36hnhsbx.requirements.txt (line 47))
+  Downloading scikit_learn-1.6.1-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (18 kB)
+Collecting sentence-transformers==3.4.0 (from -r /gpfs/home4/scur1700/Repo_Author/Banyan/condaenv.36hnhsbx.requirements.txt (line 48))
+  Downloading sentence_transformers-3.4.0-py3-none-any.whl.metadata (10 kB)
+Collecting sentencepiece==0.1.99 (from -r /gpfs/home4/scur1700/Repo_Author/Banyan/condaenv.36hnhsbx.requirements.txt (line 49))
+  Downloading sentencepiece-0.1.99-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (7.7 kB)
+Collecting service-identity==24.2.0 (from -r /gpfs/home4/scur1700/Repo_Author/Banyan/condaenv.36hnhsbx.requirements.txt (line 50))
+  Downloading service_identity-24.2.0-py3-none-any.whl.metadata (5.1 kB)
+Collecting smart-open==6.4.0 (from -r /gpfs/home4/scur1700/Repo_Author/Banyan/condaenv.36hnhsbx.requirements.txt (line 51))
+  Downloading smart_open-6.4.0-py3-none-any.whl.metadata (21 kB)
+Collecting sniffio==1.3.0 (from -r /gpfs/home4/scur1700/Repo_Author/Banyan/condaenv.36hnhsbx.requirements.txt (line 52))
+  Downloading sniffio-1.3.0-py3-none-any.whl.metadata (3.6 kB)
+Collecting spake2==0.9 (from -r /gpfs/home4/scur1700/Repo_Author/Banyan/condaenv.36hnhsbx.requirements.txt (line 53))
+  Downloading spake2-0.9-py3-none-any.whl.metadata (523 bytes)
+Collecting sqlalchemy==2.0.25 (from -r /gpfs/home4/scur1700/Repo_Author/Banyan/condaenv.36hnhsbx.requirements.txt (line 54))
+  Downloading SQLAlchemy-2.0.25-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (9.6 kB)
+Collecting starlette==0.36.3 (from -r /gpfs/home4/scur1700/Repo_Author/Banyan/condaenv.36hnhsbx.requirements.txt (line 55))
+  Downloading starlette-0.36.3-py3-none-any.whl.metadata (5.9 kB)
+Collecting threadpoolctl==3.5.0 (from -r /gpfs/home4/scur1700/Repo_Author/Banyan/condaenv.36hnhsbx.requirements.txt (line 56))
+  Downloading threadpoolctl-3.5.0-py3-none-any.whl.metadata (13 kB)
+Collecting tokenizers==0.21.0 (from -r /gpfs/home4/scur1700/Repo_Author/Banyan/condaenv.36hnhsbx.requirements.txt (line 57))
+  Downloading tokenizers-0.21.0-cp39-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (6.7 kB)
+Collecting transformers==4.48.1 (from -r /gpfs/home4/scur1700/Repo_Author/Banyan/condaenv.36hnhsbx.requirements.txt (line 58))
+  Downloading transformers-4.48.1-py3-none-any.whl.metadata (44 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 44.4/44.4 kB 8.2 MB/s eta 0:00:00
+Collecting twisted==24.11.0 (from -r /gpfs/home4/scur1700/Repo_Author/Banyan/condaenv.36hnhsbx.requirements.txt (line 59))
+  Downloading twisted-24.11.0-py3-none-any.whl.metadata (20 kB)
+Collecting txaio==23.1.1 (from -r /gpfs/home4/scur1700/Repo_Author/Banyan/condaenv.36hnhsbx.requirements.txt (line 60))
+  Downloading txaio-23.1.1-py2.py3-none-any.whl.metadata (5.4 kB)
+Collecting txtorcon==24.8.0 (from -r /gpfs/home4/scur1700/Repo_Author/Banyan/condaenv.36hnhsbx.requirements.txt (line 61))
+  Downloading txtorcon-24.8.0-py3-none-any.whl.metadata (6.1 kB)
+Collecting typing-extensions==4.9.0 (from -r /gpfs/home4/scur1700/Repo_Author/Banyan/condaenv.36hnhsbx.requirements.txt (line 62))
+  Downloading typing_extensions-4.9.0-py3-none-any.whl.metadata (3.0 kB)
+Collecting uvicorn==0.27.0.post1 (from -r /gpfs/home4/scur1700/Repo_Author/Banyan/condaenv.36hnhsbx.requirements.txt (line 63))
+  Downloading uvicorn-0.27.0.post1-py3-none-any.whl.metadata (6.4 kB)
+Collecting zipstream-ng==1.8.0 (from -r /gpfs/home4/scur1700/Repo_Author/Banyan/condaenv.36hnhsbx.requirements.txt (line 64))
+  Downloading zipstream_ng-1.8.0-py3-none-any.whl.metadata (10 kB)
+Collecting zope-interface==7.2 (from -r /gpfs/home4/scur1700/Repo_Author/Banyan/condaenv.36hnhsbx.requirements.txt (line 65))
+  Downloading zope.interface-7.2-cp311-cp311-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (44 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 44.4/44.4 kB 7.8 MB/s eta 0:00:00
+Requirement already satisfied: idna>=2.8 in /home/scur1700/.conda/envs/banyan/lib/python3.11/site-packages (from anyio==4.2.0->-r /gpfs/home4/scur1700/Repo_Author/Banyan/condaenv.36hnhsbx.requirements.txt (line 4)) (3.4)
+Requirement already satisfied: cryptography>=3.4.6 in /home/scur1700/.conda/envs/banyan/lib/python3.11/site-packages (from autobahn==24.4.2->-r /gpfs/home4/scur1700/Repo_Author/Banyan/condaenv.36hnhsbx.requirements.txt (line 5)) (41.0.3)
+Requirement already satisfied: setuptools in /home/scur1700/.conda/envs/banyan/lib/python3.11/site-packages (from autobahn==24.4.2->-r /gpfs/home4/scur1700/Repo_Author/Banyan/condaenv.36hnhsbx.requirements.txt (line 5)) (68.0.0)
+Requirement already satisfied: numpy in /home/scur1700/.conda/envs/banyan/lib/python3.11/site-packages (from bottleneck==1.3.6->-r /gpfs/home4/scur1700/Repo_Author/Banyan/condaenv.36hnhsbx.requirements.txt (line 9)) (1.26.0)
+Requirement already satisfied: tqdm in /home/scur1700/.conda/envs/banyan/lib/python3.11/site-packages (from bpemb==0.3.6->-r /gpfs/home4/scur1700/Repo_Author/Banyan/condaenv.36hnhsbx.requirements.txt (line 10)) (4.65.0)
+Requirement already satisfied: filelock in /home/scur1700/.conda/envs/banyan/lib/python3.11/site-packages (from datasets==2.19.2->-r /gpfs/home4/scur1700/Repo_Author/Banyan/condaenv.36hnhsbx.requirements.txt (line 13)) (3.9.0)
+Requirement already satisfied: dill<0.3.9,>=0.3.0 in /home/scur1700/.conda/envs/banyan/lib/python3.11/site-packages (from datasets==2.19.2->-r /gpfs/home4/scur1700/Repo_Author/Banyan/condaenv.36hnhsbx.requirements.txt (line 13)) (0.3.6)
+Requirement already satisfied: xxhash in /home/scur1700/.conda/envs/banyan/lib/python3.11/site-packages (from datasets==2.19.2->-r /gpfs/home4/scur1700/Repo_Author/Banyan/condaenv.36hnhsbx.requirements.txt (line 13)) (2.0.2)
+Requirement already satisfied: multiprocess in /home/scur1700/.conda/envs/banyan/lib/python3.11/site-packages (from datasets==2.19.2->-r /gpfs/home4/scur1700/Repo_Author/Banyan/condaenv.36hnhsbx.requirements.txt (line 13)) (0.70.14)
+Requirement already satisfied: fsspec<=2024.3.1,>=2023.1.0 in /home/scur1700/.conda/envs/banyan/lib/python3.11/site-packages (from fsspec[http]<=2024.3.1,>=2023.1.0->datasets==2.19.2->-r /gpfs/home4/scur1700/Repo_Author/Banyan/condaenv.36hnhsbx.requirements.txt (line 13)) (2023.10.0)
+Requirement already satisfied: aiohttp in /home/scur1700/.conda/envs/banyan/lib/python3.11/site-packages (from datasets==2.19.2->-r /gpfs/home4/scur1700/Repo_Author/Banyan/condaenv.36hnhsbx.requirements.txt (line 13)) (3.9.0)
+Requirement already satisfied: pyyaml>=5.1 in /home/scur1700/.conda/envs/banyan/lib/python3.11/site-packages (from datasets==2.19.2->-r /gpfs/home4/scur1700/Repo_Author/Banyan/condaenv.36hnhsbx.requirements.txt (line 13)) (6.0.1)
+Requirement already satisfied: urllib3>=1.21.1 in /home/scur1700/.conda/envs/banyan/lib/python3.11/site-packages (from elasticsearch==7.9.1->-r /gpfs/home4/scur1700/Repo_Author/Banyan/condaenv.36hnhsbx.requirements.txt (line 14)) (1.26.18)
+Requirement already satisfied: certifi in /home/scur1700/.conda/envs/banyan/lib/python3.11/site-packages (from elasticsearch==7.9.1->-r /gpfs/home4/scur1700/Repo_Author/Banyan/condaenv.36hnhsbx.requirements.txt (line 14)) (2023.11.17)
+Requirement already satisfied: scipy>=1.7.0 in /home/scur1700/.conda/envs/banyan/lib/python3.11/site-packages (from gensim==4.3.2->-r /gpfs/home4/scur1700/Repo_Author/Banyan/condaenv.36hnhsbx.requirements.txt (line 17)) (1.11.3)
+Requirement already satisfied: attrs>=19.2.0 in /home/scur1700/.conda/envs/banyan/lib/python3.11/site-packages (from magic-wormhole==0.17.0->-r /gpfs/home4/scur1700/Repo_Author/Banyan/condaenv.36hnhsbx.requirements.txt (line 27)) (23.1.0)
+Requirement already satisfied: click in /home/scur1700/.conda/envs/banyan/lib/python3.11/site-packages (from magic-wormhole==0.17.0->-r /gpfs/home4/scur1700/Repo_Author/Banyan/condaenv.36hnhsbx.requirements.txt (line 27)) (8.1.7)
+Requirement already satisfied: MarkupSafe>=0.9.2 in /home/scur1700/.conda/envs/banyan/lib/python3.11/site-packages (from mako==1.3.2->-r /gpfs/home4/scur1700/Repo_Author/Banyan/condaenv.36hnhsbx.requirements.txt (line 28)) (2.1.1)
+Requirement already satisfied: joblib in /home/scur1700/.conda/envs/banyan/lib/python3.11/site-packages (from nltk==3.9.1->-r /gpfs/home4/scur1700/Repo_Author/Banyan/condaenv.36hnhsbx.requirements.txt (line 29)) (1.2.0)
+Requirement already satisfied: regex>=2021.8.3 in /home/scur1700/.conda/envs/banyan/lib/python3.11/site-packages (from nltk==3.9.1->-r /gpfs/home4/scur1700/Repo_Author/Banyan/condaenv.36hnhsbx.requirements.txt (line 29)) (2023.10.3)
+Requirement already satisfied: python-dateutil>=2.8.2 in /home/scur1700/.conda/envs/banyan/lib/python3.11/site-packages (from pandas==2.2.2->-r /gpfs/home4/scur1700/Repo_Author/Banyan/condaenv.36hnhsbx.requirements.txt (line 31)) (2.8.2)
+Requirement already satisfied: pytz>=2020.1 in /home/scur1700/.conda/envs/banyan/lib/python3.11/site-packages (from pandas==2.2.2->-r /gpfs/home4/scur1700/Repo_Author/Banyan/condaenv.36hnhsbx.requirements.txt (line 31)) (2023.3.post1)
+Requirement already satisfied: tzdata>=2022.7 in /home/scur1700/.conda/envs/banyan/lib/python3.11/site-packages (from pandas==2.2.2->-r /gpfs/home4/scur1700/Repo_Author/Banyan/condaenv.36hnhsbx.requirements.txt (line 31)) (2023.3)
+Requirement already satisfied: cffi>=1.4.1 in /home/scur1700/.conda/envs/banyan/lib/python3.11/site-packages (from pynacl==1.5.0->-r /gpfs/home4/scur1700/Repo_Author/Banyan/condaenv.36hnhsbx.requirements.txt (line 41)) (1.15.1)
+Requirement already satisfied: charset-normalizer<4,>=2 in /home/scur1700/.conda/envs/banyan/lib/python3.11/site-packages (from requests==2.32.3->-r /gpfs/home4/scur1700/Repo_Author/Banyan/condaenv.36hnhsbx.requirements.txt (line 44)) (2.0.4)
+Requirement already satisfied: torch>=1.11.0 in /home/scur1700/.conda/envs/banyan/lib/python3.11/site-packages (from sentence-transformers==3.4.0->-r /gpfs/home4/scur1700/Repo_Author/Banyan/condaenv.36hnhsbx.requirements.txt (line 48)) (2.1.0)
+Requirement already satisfied: Pillow in /home/scur1700/.conda/envs/banyan/lib/python3.11/site-packages (from sentence-transformers==3.4.0->-r /gpfs/home4/scur1700/Repo_Author/Banyan/condaenv.36hnhsbx.requirements.txt (line 48)) (10.0.1)
+Requirement already satisfied: pycparser in /home/scur1700/.conda/envs/banyan/lib/python3.11/site-packages (from cffi>=1.4.1->pynacl==1.5.0->-r /gpfs/home4/scur1700/Repo_Author/Banyan/condaenv.36hnhsbx.requirements.txt (line 41)) (2.21)
+Requirement already satisfied: multidict<7.0,>=4.5 in /home/scur1700/.conda/envs/banyan/lib/python3.11/site-packages (from aiohttp->datasets==2.19.2->-r /gpfs/home4/scur1700/Repo_Author/Banyan/condaenv.36hnhsbx.requirements.txt (line 13)) (6.0.4)
+Requirement already satisfied: yarl<2.0,>=1.0 in /home/scur1700/.conda/envs/banyan/lib/python3.11/site-packages (from aiohttp->datasets==2.19.2->-r /gpfs/home4/scur1700/Repo_Author/Banyan/condaenv.36hnhsbx.requirements.txt (line 13)) (1.9.3)
+Requirement already satisfied: frozenlist>=1.1.1 in /home/scur1700/.conda/envs/banyan/lib/python3.11/site-packages (from aiohttp->datasets==2.19.2->-r /gpfs/home4/scur1700/Repo_Author/Banyan/condaenv.36hnhsbx.requirements.txt (line 13)) (1.4.0)
+Requirement already satisfied: aiosignal>=1.1.2 in /home/scur1700/.conda/envs/banyan/lib/python3.11/site-packages (from aiohttp->datasets==2.19.2->-r /gpfs/home4/scur1700/Repo_Author/Banyan/condaenv.36hnhsbx.requirements.txt (line 13)) (1.2.0)
+Requirement already satisfied: six>=1.5 in /home/scur1700/.conda/envs/banyan/lib/python3.11/site-packages (from python-dateutil>=2.8.2->pandas==2.2.2->-r /gpfs/home4/scur1700/Repo_Author/Banyan/condaenv.36hnhsbx.requirements.txt (line 31)) (1.16.0)
+Requirement already satisfied: sympy in /home/scur1700/.conda/envs/banyan/lib/python3.11/site-packages (from torch>=1.11.0->sentence-transformers==3.4.0->-r /gpfs/home4/scur1700/Repo_Author/Banyan/condaenv.36hnhsbx.requirements.txt (line 48)) (1.11.1)
+Requirement already satisfied: networkx in /home/scur1700/.conda/envs/banyan/lib/python3.11/site-packages (from torch>=1.11.0->sentence-transformers==3.4.0->-r /gpfs/home4/scur1700/Repo_Author/Banyan/condaenv.36hnhsbx.requirements.txt (line 48)) (3.1)
+Requirement already satisfied: jinja2 in /home/scur1700/.conda/envs/banyan/lib/python3.11/site-packages (from torch>=1.11.0->sentence-transformers==3.4.0->-r /gpfs/home4/scur1700/Repo_Author/Banyan/condaenv.36hnhsbx.requirements.txt (line 48)) (3.1.2)
+Requirement already satisfied: pyopenssl>=21.0.0 in /home/scur1700/.conda/envs/banyan/lib/python3.11/site-packages (from twisted[tls]>=17.5.0->magic-wormhole==0.17.0->-r /gpfs/home4/scur1700/Repo_Author/Banyan/condaenv.36hnhsbx.requirements.txt (line 27)) (23.2.0)
+Requirement already satisfied: mpmath>=0.19 in /home/scur1700/.conda/envs/banyan/lib/python3.11/site-packages (from sympy->torch>=1.11.0->sentence-transformers==3.4.0->-r /gpfs/home4/scur1700/Repo_Author/Banyan/condaenv.36hnhsbx.requirements.txt (line 48)) (1.3.0)
+Downloading aiofiles-23.2.1-py3-none-any.whl (15 kB)
+Downloading alembic-1.13.1-py3-none-any.whl (233 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 233.4/233.4 kB 28.1 MB/s eta 0:00:00
+Downloading annotated_types-0.6.0-py3-none-any.whl (12 kB)
+Downloading anyio-4.2.0-py3-none-any.whl (85 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 85.5/85.5 kB 15.7 MB/s eta 0:00:00
+Downloading autobahn-24.4.2-py2.py3-none-any.whl (666 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 667.0/667.0 kB 69.5 MB/s eta 0:00:00
+Downloading Automat-24.8.1-py3-none-any.whl (42 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 42.6/42.6 kB 7.3 MB/s eta 0:00:00
+Downloading base58-2.0.1-py3-none-any.whl (4.3 kB)
+Downloading bpemb-0.3.6-py3-none-any.whl (20 kB)
+Downloading cachetools-5.3.2-py3-none-any.whl (9.3 kB)
+Downloading constantly-23.10.4-py3-none-any.whl (13 kB)
+Downloading datasets-2.19.2-py3-none-any.whl (542 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 542.1/542.1 kB 420.9 kB/s eta 0:00:00
+Downloading elasticsearch-7.9.1-py2.py3-none-any.whl (219 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 219.2/219.2 kB 41.8 MB/s eta 0:00:00
+Downloading faiss_cpu-1.9.0.post1-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (27.5 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 27.5/27.5 MB 4.6 MB/s eta 0:00:00
+Downloading fastapi-0.109.2-py3-none-any.whl (92 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 92.1/92.1 kB 18.2 MB/s eta 0:00:00
+Downloading gensim-4.3.2-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (26.7 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 26.7/26.7 MB 6.9 MB/s eta 0:00:00
+Downloading greenlet-3.0.3-cp311-cp311-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (620 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 620.0/620.0 kB 595.8 kB/s eta 0:00:00
+Downloading grpcio-1.60.1-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (5.4 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.4/5.4 MB 143.0 MB/s eta 0:00:00
+Downloading h11-0.14.0-py3-none-any.whl (58 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 58.3/58.3 kB 11.1 MB/s eta 0:00:00
+Downloading huggingface_hub-0.27.1-py3-none-any.whl (450 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 450.7/450.7 kB 64.0 MB/s eta 0:00:00
+Downloading humanize-4.11.0-py3-none-any.whl (128 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 128.1/128.1 kB 26.7 MB/s eta 0:00:00
+Downloading hyperlink-21.0.0-py2.py3-none-any.whl (74 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 74.6/74.6 kB 16.9 MB/s eta 0:00:00
+Downloading incremental-24.7.2-py3-none-any.whl (20 kB)
+Downloading iniconfig-2.1.0-py3-none-any.whl (6.0 kB)
+Downloading iterable_io-1.0.0-py3-none-any.whl (4.9 kB)
+Downloading magic_wormhole-0.17.0-py3-none-any.whl (200 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 200.8/200.8 kB 39.3 MB/s eta 0:00:00
+Downloading Mako-1.3.2-py3-none-any.whl (78 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 78.7/78.7 kB 16.0 MB/s eta 0:00:00
+Downloading nltk-3.9.1-py3-none-any.whl (1.5 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.5/1.5 MB 134.2 MB/s eta 0:00:00
+Downloading packaging-23.2-py3-none-any.whl (53 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 53.0/53.0 kB 9.7 MB/s eta 0:00:00
+Downloading pandas-2.2.2-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (13.0 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 13.0/13.0 MB 169.7 MB/s eta 0:00:00
+Downloading pluggy-1.5.0-py3-none-any.whl (20 kB)
+Downloading protobuf-4.25.2-cp37-abi3-manylinux2014_x86_64.whl (294 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 294.6/294.6 kB 51.1 MB/s eta 0:00:00
+Downloading pyarrow-16.1.0-cp311-cp311-manylinux_2_28_x86_64.whl (40.8 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 40.8/40.8 MB 14.7 MB/s eta 0:00:00
+Downloading pyarrow_hotfix-0.6-py3-none-any.whl (7.9 kB)
+Downloading pyasn1-0.6.1-py3-none-any.whl (83 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 83.1/83.1 kB 16.0 MB/s eta 0:00:00
+Downloading pyasn1_modules-0.4.1-py3-none-any.whl (181 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 181.5/181.5 kB 36.8 MB/s eta 0:00:00
+Downloading pydantic-2.6.1-py3-none-any.whl (394 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 394.8/394.8 kB 65.2 MB/s eta 0:00:00
+Downloading pydantic_core-2.16.2-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.2/2.2 MB 102.3 MB/s eta 0:00:00
+Downloading pykan-0.0.2-py3-none-any.whl (29 kB)
+Downloading PyNaCl-1.5.0-cp36-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.manylinux_2_24_x86_64.whl (856 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 856.7/856.7 kB 102.6 MB/s eta 0:00:00
+Downloading pytest-8.3.5-py3-none-any.whl (343 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 343.6/343.6 kB 60.8 MB/s eta 0:00:00
+Downloading requests-2.32.3-py3-none-any.whl (64 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 64.9/64.9 kB 13.9 MB/s eta 0:00:00
+Downloading RestrictedPython-7.0-py3-none-any.whl (26 kB)
+Downloading safetensors-0.5.2-cp38-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (461 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 462.0/462.0 kB 73.4 MB/s eta 0:00:00
+Downloading scikit_learn-1.6.1-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (13.5 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 13.5/13.5 MB 128.7 MB/s eta 0:00:00
+Downloading sentence_transformers-3.4.0-py3-none-any.whl (275 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 275.7/275.7 kB 44.0 MB/s eta 0:00:00
+Downloading sentencepiece-0.1.99-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (1.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.3/1.3 MB 104.9 MB/s eta 0:00:00
+Downloading service_identity-24.2.0-py3-none-any.whl (11 kB)
+Downloading smart_open-6.4.0-py3-none-any.whl (57 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 57.0/57.0 kB 11.5 MB/s eta 0:00:00
+Downloading sniffio-1.3.0-py3-none-any.whl (10 kB)
+Downloading spake2-0.9-py3-none-any.whl (31 kB)
+Downloading SQLAlchemy-2.0.25-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.2/3.2 MB 104.9 MB/s eta 0:00:00
+Downloading starlette-0.36.3-py3-none-any.whl (71 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 71.5/71.5 kB 15.3 MB/s eta 0:00:00
+Downloading threadpoolctl-3.5.0-py3-none-any.whl (18 kB)
+Downloading tokenizers-0.21.0-cp39-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.0 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.0/3.0 MB 145.1 MB/s eta 0:00:00
+Downloading transformers-4.48.1-py3-none-any.whl (9.7 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 9.7/9.7 MB 128.5 MB/s eta 0:00:00
+Downloading twisted-24.11.0-py3-none-any.whl (3.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.2/3.2 MB 131.7 MB/s eta 0:00:00
+Downloading txaio-23.1.1-py2.py3-none-any.whl (30 kB)
+Downloading txtorcon-24.8.0-py3-none-any.whl (261 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 261.3/261.3 kB 44.9 MB/s eta 0:00:00
+Downloading typing_extensions-4.9.0-py3-none-any.whl (32 kB)
+Downloading uvicorn-0.27.0.post1-py3-none-any.whl (60 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 60.7/60.7 kB 12.0 MB/s eta 0:00:00
+Downloading zipstream_ng-1.8.0-py3-none-any.whl (23 kB)
+Downloading zope.interface-7.2-cp311-cp311-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (259 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 259.8/259.8 kB 36.7 MB/s eta 0:00:00
+Building wheels for collected packages: beir, bottleneck, pytrec-eval
+  Building wheel for beir (setup.py): started
+  Building wheel for beir (setup.py): finished with status 'done'
+  Created wheel for beir: filename=beir-2.0.0-py3-none-any.whl size=63550 sha256=7fa442b9c16a465ff464cb6a36368c143178861a596734c1789fa55de9a7d56f
+  Stored in directory: /gpfs/home4/scur1700/.cache/pip/wheels/87/4d/5d/5b20c57488e83fc5dab7a9a3442c0555b6c4094d1504a22ac3
+  Building wheel for bottleneck (pyproject.toml): started
+  Building wheel for bottleneck (pyproject.toml): finished with status 'done'
+  Created wheel for bottleneck: filename=bottleneck-1.3.6-cp311-cp311-linux_x86_64.whl size=114525 sha256=fbdf2e6e9e0c4eecae600f2ab0733e2dc798cc06bcd0ff1815501b8fd4aacb7c
+  Stored in directory: /gpfs/home4/scur1700/.cache/pip/wheels/a4/5a/32/5e5ae3f5fe6e8128da75a0ffc549dc7b3090d75f2451e04946
+  Building wheel for pytrec-eval (setup.py): started
+  Building wheel for pytrec-eval (setup.py): finished with status 'done'
+  Created wheel for pytrec-eval: filename=pytrec_eval-0.5-cp311-cp311-linux_x86_64.whl size=297869 sha256=ad88de78090c3caeea4bfc0f6387edcabb712739895d8e9b0ea118cab13f401d
+  Stored in directory: /gpfs/home4/scur1700/.cache/pip/wheels/0f/89/42/86aecdb99975f1840c27bc37fdfed72116abcf82e2c9dc76a8
+Successfully built beir bottleneck pytrec-eval
+Installing collected packages: sentencepiece, zope-interface, zipstream-ng, typing-extensions, txaio, threadpoolctl, sniffio, smart-open, safetensors, restrictedpython, requests, pytrec-eval, pykan, pyasn1, pyarrow-hotfix, pyarrow, protobuf, pluggy, packaging, nltk, mako, iterable-io, iniconfig, incremental, hyperlink, humanize, h11, grpcio, greenlet, elasticsearch, constantly, cachetools, bottleneck, base58, automat, annotated-types, aiofiles, uvicorn, twisted, sqlalchemy, scikit-learn, pytest, pynacl, pydantic-core, pyasn1-modules, pandas, huggingface-hub, gensim, faiss-cpu, anyio, tokenizers, starlette, spake2, service-identity, pydantic, bpemb, autobahn, alembic, transformers, fastapi, datasets, txtorcon, sentence-transformers, magic-wormhole, beir
+  Attempting uninstall: typing-extensions
+    Found existing installation: typing_extensions 4.15.0
+    Uninstalling typing_extensions-4.15.0:
+      Successfully uninstalled typing_extensions-4.15.0
+  Attempting uninstall: requests
+    Found existing installation: requests 2.32.5
+    Uninstalling requests-2.32.5:
+      Successfully uninstalled requests-2.32.5
+Successfully installed aiofiles-23.2.1 alembic-1.13.1 annotated-types-0.6.0 anyio-4.2.0 autobahn-24.4.2 automat-24.8.1 base58-2.0.1 beir-2.0.0 bottleneck-1.3.6 bpemb-0.3.6 cachetools-5.3.2 constantly-23.10.4 datasets-2.19.2 elasticsearch-7.9.1 faiss-cpu-1.9.0.post1 fastapi-0.109.2 gensim-4.3.2 greenlet-3.0.3 grpcio-1.60.1 h11-0.14.0 huggingface-hub-0.27.1 humanize-4.11.0 hyperlink-21.0.0 incremental-24.7.2 iniconfig-2.1.0 iterable-io-1.0.0 magic-wormhole-0.17.0 mako-1.3.2 nltk-3.9.1 packaging-23.2 pandas-2.2.2 pluggy-1.5.0 protobuf-4.25.2 pyarrow-16.1.0 pyarrow-hotfix-0.6 pyasn1-0.6.1 pyasn1-modules-0.4.1 pydantic-2.6.1 pydantic-core-2.16.2 pykan-0.0.2 pynacl-1.5.0 pytest-8.3.5 pytrec-eval-0.5 requests-2.32.3 restrictedpython-7.0 safetensors-0.5.2 scikit-learn-1.6.1 sentence-transformers-3.4.0 sentencepiece-0.1.99 service-identity-24.2.0 smart-open-6.4.0 sniffio-1.3.0 spake2-0.9 sqlalchemy-2.0.25 starlette-0.36.3 threadpoolctl-3.5.0 tokenizers-0.21.0 transformers-4.48.1 twisted-24.11.0 txaio-23.1.1 txtorcon-24.8.0 typing-extensions-4.9.0 uvicorn-0.27.0.post1 zipstream-ng-1.8.0 zope-interface-7.2
+
+done
+#
+# To activate this environment, use
+#
+#     $ conda activate banyan
+#
+# To deactivate an active environment, use
+#
+#     $ conda deactivate
+
