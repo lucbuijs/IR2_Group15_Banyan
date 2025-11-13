@@ -1,0 +1,45 @@
+#!/bin/bash
+#SBATCH --nodes=1
+#SBATCH --gpus=1
+#SBATCH --partition=gpu_a100
+#SBATCH --time=00:30:00
+#SBATCH --cpus-per-task=8
+#SBATCH --job-name=train_model_sent2vec
+#SBATCH --output=logs/%x/%j.out
+
+module purge
+module load 2024
+module load Anaconda3/2024.06-1
+
+source activate base
+
+cd ~/Repo_Combined/sent2vec
+
+mkdir -p checkpoints
+
+echo "Starting Sent2Vec training..."
+
+./fasttext sent2vec \
+  -input ~/Repo_Combined/banyan/data/en_train.txt \
+  -output checkpoints/sent2vec_en_wiki_bigrams \
+  -lr 0.2 \
+  -lrUpdateRate 100 \
+  -dim 100 \
+  -epoch 5 \
+  -minCount 5 \
+  -minCountLabel 0 \
+  -neg 10 \
+  -wordNgrams 2 \
+  -loss ns \
+  -bucket 2000000 \
+  -thread 2 \
+  -t 0.0001 \
+  -dropoutK 2 \
+  -verbose 2 \
+  -maxVocabSize None \
+  -numCheckPoints 1
+
+
+
+
+echo "Sent2Vec training complete."
