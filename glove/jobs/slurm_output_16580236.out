@@ -1,0 +1,48 @@
+============================================================================================== 
+Warning! Mixing Conda and module environments may lead to corruption of the
+user environment. 
+We do not recommend users mixing those two environments unless absolutely
+necessary. Note that 
+SURF does not provide any support for Conda environment.
+For more information, please refer to our software policy page:
+https://servicedesk.surf.nl/wiki/display/WIKI/Software+policy+Snellius#SoftwarepolicySnellius-UseofAnacondaandMinicondaenvironmentsonSnellius 
+
+Remember that many packages have already been installed on the system and can
+be loaded using 
+the 'module load <package__name>' command. If you are uncertain if a package is
+already available 
+on the system, please use 'module avail' or 'module spider' to search for it.
+============================================================================================== 
+Loading corpus...
+Loaded 8674 documents.
+Loading queries...
+Loaded 1406 queries.
+Loading relevance judgments...
+Loaded relevance for 1406 queries.
+
+Running RANDOM baseline with 3 seeds...
+
+--- Seed 0 ---
+NDCG@1  = 0.0000
+NDCG@10 = 0.0005
+R@1     = 0.0000
+R@10    = 0.0014
+
+--- Seed 1 ---
+NDCG@1  = 0.0000
+NDCG@10 = 0.0007
+R@1     = 0.0000
+R@10    = 0.0021
+
+--- Seed 2 ---
+NDCG@1  = 0.0000
+NDCG@10 = 0.0003
+R@1     = 0.0000
+R@10    = 0.0007
+
+===== AVERAGE OVER SEEDS =====
+NDCG@1: 0.0000
+NDCG@10: 0.0005
+R@1: 0.0000
+R@10: 0.0014
+===============================

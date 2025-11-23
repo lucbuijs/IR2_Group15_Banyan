@@ -1,0 +1,21 @@
+#!/bin/bash
+#SBATCH --nodes=1
+#SBATCH --gpus=1
+#SBATCH --partition=gpu_a100
+#SBATCH --time=01:00:00
+#SBATCH --cpus-per-task=8
+#SBATCH --job-name=qwen_retrieval
+#SBATCH --output=logs/%x/%j.out
+
+module purge
+module load 2024
+module load Anaconda3/2024.06-1
+source activate base
+
+# Make sure you have these packages installed
+# pip install transformers torch accelerate
+
+echo "Starting Qwen3-Embedding-8B retrieval evaluation..."
+python qwen_retrieval.py
+
+echo "Qwen3 evaluation complete."
