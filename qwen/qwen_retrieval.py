@@ -110,14 +110,14 @@ if __name__ == "__main__":
     
     # Set data folder to banyan/data
     banyan_data_path = os.path.expanduser("~/Repo_Combined/banyan/data")
-    
+
     # Evaluate on Arguana
     arguana_metrics = evaluate_dataset(
         dense_model,
         os.path.join(banyan_data_path, "arguana"),
         "Arguana"
     )
-    
+
     # Evaluate on Quora
     quora_metrics = evaluate_dataset(
         dense_model,
@@ -125,7 +125,8 @@ if __name__ == "__main__":
         "Quora"
     )
 
-        # Evaluate on NFCorpus
+
+    # Evaluate on NFCorpus
     nfcorpus_metrics = evaluate_dataset(
         dense_model,
         os.path.join(banyan_data_path, "nfcorpus"),
@@ -146,3 +147,5 @@ if __name__ == "__main__":
     print("="*50)
     print(f"Arguana NDCG@10: {arguana_metrics[0]['NDCG@10']:.4f}")
     print(f"Quora NDCG@10: {quora_metrics[0]['NDCG@10']:.4f}")
+    print(f"NFCorpus NDCG@10: {nfcorpus_metrics[0]['NDCG@10']:.4f}")
+    print(f"SciFact NDCG@10: {scifact_metrics[0]['NDCG@10']:.4f}")
