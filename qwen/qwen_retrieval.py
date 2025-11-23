@@ -124,6 +124,21 @@ if __name__ == "__main__":
         os.path.join(banyan_data_path, "quora"),
         "Quora"
     )
+
+        # Evaluate on NFCorpus
+    nfcorpus_metrics = evaluate_dataset(
+        dense_model,
+        os.path.join(banyan_data_path, "nfcorpus"),
+        "NFCorpus"
+    )
+
+    # Evaluate on SciFact
+    scifact_metrics = evaluate_dataset(
+        dense_model,
+        os.path.join(banyan_data_path, "scifact"),
+        "SciFact"
+    )
+    
     
     # Print summary
     print("\n" + "="*50)

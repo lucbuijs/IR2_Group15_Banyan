@@ -69,3 +69,17 @@ corpus, queries, qrels = GenericDataLoader(data_path).load(split="test")
 
 results = retriever.retrieve(corpus, queries)
 print(retriever.evaluate(qrels, results, retriever.k_values))
+
+data_path = "data/nfcorpus"
+print('Evaluating on NFCorpus dataset...')
+corpus, queries, qrels = GenericDataLoader(data_path).load(split="test")
+
+results = retriever.retrieve(corpus, queries)
+print(retriever.evaluate(qrels, results, retriever.k_values))
+
+data_path = "data/scifact"
+print('Evaluating on Scifact dataset...')
+corpus, queries, qrels = GenericDataLoader(data_path).load(split="test")
+
+results = retriever.retrieve(corpus, queries)
+print(retriever.evaluate(qrels, results, retriever.k_values))

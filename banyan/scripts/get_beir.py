@@ -12,3 +12,15 @@ dataset = 'quora'
 url = "https://public.ukp.informatik.tu-darmstadt.de/thakur/BEIR/datasets/{}.zip".format(dataset)
 data_path = util.download_and_unzip(url, '../data')
 print("Dataset downloaded here: {}".format(data_path))
+
+# get scifact
+dataset = 'scifact'
+url = "https://public.ukp.informatik.tu-darmstadt.de/thakur/BEIR/datasets/{}.zip".format(dataset)
+data_path = util.download_and_unzip(url, '../data')
+print("Dataset downloaded here: {}".format(data_path))
+
+# get nfcorpus
+dataset = 'nfcorpus'
+url = "https://public.ukp.informatik.tu-darmstadt.de/thakur/BEIR/datasets/{}.zip".format(dataset)
+data_path = util.download_and_unzip(url, '../data')
+print("Dataset downloaded here: {}".format(data_path))
