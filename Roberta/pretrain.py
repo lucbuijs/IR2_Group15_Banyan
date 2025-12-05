@@ -15,8 +15,8 @@ def get_args():
     parser = argparse.ArgumentParser(description="Pretrain RoBERTa-medium on Wiki-103")
     parser.add_argument("--output_dir", type=str, default="checkpoints/roberta-medium-wiki103", help="Directory to save checkpoints")
     parser.add_argument("--seed", type=int, default=42, help="Random seed")
-    parser.add_argument("--max_steps", type=int, default=200000, help="Total training steps")
-    parser.add_argument("--warmup_steps", type=int, default=20000, help="Warmup steps")
+    parser.add_argument("--max_steps", type=int, default=40000, help="Total training steps")
+    parser.add_argument("--warmup_steps", type=int, default=4000, help="Warmup steps")
     parser.add_argument("--learning_rate", type=float, default=5e-5, help="Learning rate")
     parser.add_argument("--batch_size", type=int, default=128, help="Per device batch size") # Increased for A100
     parser.add_argument("--gradient_accumulation_steps", type=int, default=2, help="Gradient accumulation steps")
