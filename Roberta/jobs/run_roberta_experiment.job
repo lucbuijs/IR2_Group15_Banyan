@@ -1,0 +1,25 @@
+#!/bin/bash
+#SBATCH --nodes=1
+#SBATCH --gpus=1
+#SBATCH --partition=gpu_h100
+#SBATCH --time=3:00:00
+#SBATCH --cpus-per-task=8
+#SBATCH --job-name=run_roberta_exp
+#SBATCH --output=logs/%x/%j.out
+
+module purge
+module load 2024
+module load Anaconda3/2024.06-1
+
+# Navigate to the correct directory
+cd ~/Roberta
+
+source activate roberta_env
+
+# Create logs directory if it doesn't exist
+mkdir -p logs
+
+# Run the full experiment
+# This includes data prep (if not done), pre-training, and evaluation for 4 seeds
+# Note: This might take a long time. You can adjust the time limit above.
+python run_experiment.py

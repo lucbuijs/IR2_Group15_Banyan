@@ -1,0 +1,24 @@
+#!/bin/bash
+#SBATCH --nodes=1
+#SBATCH --gpus=1
+#SBATCH --partition=gpu_a100
+#SBATCH --time=01:00:00
+#SBATCH --cpus-per-task=8
+#SBATCH --job-name=install_roberta_env
+#SBATCH --output=logs/%x/%j.out
+
+module purge
+module load 2024
+module load Anaconda3/2024.06-1
+
+# Navigate to the correct directory (assuming the repo is cloned at ~/IR2_Group15_Banyan)
+# Adjust this path if necessary based on where you clone it on the cluster
+cd ~/Roberta
+
+# Create a new environment named 'roberta_env'
+# We use 'pip' inside the conda environment as per the requirements.txt
+conda create -n roberta_env python=3.10 -y
+
+source activate roberta_env
+
+pip install -r requirements.txt

@@ -12,17 +12,23 @@ import re
 
 def preprocess_text(text: str) -> str:
     """
-    Preprocess text the same way sent2vec training data was preprocessed.
-    This is CRITICAL for getting good results.
+    Preprocess text the same way Sent2Vec training data was preprocessed.
     """
-    # Convert to lowercase
+    text = text.strip()
+    
+    # Replace URLs with <url>
+    text = re.sub(r'((www\.[^\s]+)|(https?://[^\s]+))','<url>', text)
+    
+    # Replace @user mentions
+    text = re.sub(r'\@[^\s]+','<user>', text)
+    
+    # Lowercase
     text = text.lower()
     
-    # Remove extra whitespace
+    # Normalize whitespace
     text = ' '.join(text.split())
     
     return text
-
 class Sent2VecRetriever:
     """
     BEIR-compatible wrapper for a Sent2Vec .bin model.
@@ -104,3 +110,9 @@ if __name__ == "__main__":
     
     # Evaluate on Quora
     evaluate_dataset(dense_model, os.path.join(banyan_data_path, "quora"), "Quora")
+
+    # Evaluate on NFCorpus
+    evaluate_dataset(dense_model, os.path.join(banyan_data_path, "nfcorpus"), "NFCorpus")
+
+    # Evaluate on SciFact
+    evaluate_dataset(dense_model, os.path.join(banyan_data_path, "scifact"), "SciFact")
