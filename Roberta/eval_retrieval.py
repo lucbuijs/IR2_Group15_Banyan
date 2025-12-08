@@ -68,7 +68,7 @@ def main():
     model = BanyanRobertaModel(args.model_path, device=device)
     
     results = {}
-    for dataset in ["quora", "arguana"]:
+    for dataset in ["quora", "arguana", "nfcorpus", "scifact"]:
         results[dataset] = evaluate_dataset(dataset, model, args.data_path)
         
     print("\nFinal Retrieval Results:")
