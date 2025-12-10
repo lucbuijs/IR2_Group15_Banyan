@@ -24,3 +24,9 @@ dataset = 'nfcorpus'
 url = "https://public.ukp.informatik.tu-darmstadt.de/thakur/BEIR/datasets/{}.zip".format(dataset)
 data_path = util.download_and_unzip(url, '../data')
 print("Dataset downloaded here: {}".format(data_path))
+
+# get MSMARCO
+dataset = 'msmarco'
+url = "https://public.ukp.informatik.tu-darmstadt.de/thakur/BEIR/datasets/{}.zip".format(dataset)
+data_path = util.download_and_unzip(url, '../data')
+print("Dataset downloaded here: {}".format(data_path))
