@@ -5,6 +5,7 @@ from models import Banyan
 import argparse
 from tqdm import tqdm 
 from eval import IntrinsicEvaluator
+import time
 
 
 class LossHandler:
@@ -46,7 +47,22 @@ def validate(dataloader, model, obj):
 def main(args, device):
     train_dataloader = create_dataloader(args.train_path, args.batch_size, shuffle=True, lang=args.lang)
     dev_dataloader = create_dataloader(args.dev_path, args.batch_size, shuffle=False, lang=args.lang)
-    model = Banyan(25001, args.e_dim, args.channels, args.r, device).to(device)
+    
+    # Model selection based on scoring type and tree induction strategy
+    if args.scoring == 'mlp':
+        from models_mlp import BanyanMLP
+        model = BanyanMLP(25001, args.e_dim, args.channels, args.r, device).to(device)
+        print('Using MLP Merge Scoring (learned)', flush=True)
+    elif args.model_type in ['beam', 'hybrid']:
+        from models_beam import BeamSearchBanyan
+        model = BeamSearchBanyan(25001, args.e_dim, args.channels, args.r, device, beam_width=args.beam_width).to(device)
+        if args.model_type == 'hybrid':
+            print(f'Using HYBRID mode: Greedy training + Beam Search inference (k={args.beam_width})', flush=True)
+        else:
+            print(f'Using Beam Search Tree Induction with beam_width={args.beam_width}', flush=True)
+    else:
+        model = Banyan(25001, args.e_dim, args.channels, args.r, device).to(device)
+        print('Using Greedy Tree Induction (cosine similarity)', flush=True)
     objective = LossHandler(device)
     optimizer = torch.optim.Adam(model.parameters(), args.lr)
     evaluator = IntrinsicEvaluator(device, args.lang)
@@ -98,6 +114,12 @@ if __name__ == '__main__':
     parser.add_argument('--seed', help='set the random seed for the model', type=int)
     parser.add_argument('--channels', help='specify the number of channels for the embeddings', type=int, default=128)
     parser.add_argument('--lang', help='specify the language of the model', type=str, default='en')
+    parser.add_argument('--model_type', help='tree induction strategy: greedy, hybrid, or beam', type=str, default='greedy',
+                        choices=['greedy', 'beam', 'hybrid'])
+    parser.add_argument('--beam_width', help='beam width for beam search inference (used in hybrid and beam modes)',
+                        type=int, default=3)
+    parser.add_argument('--scoring', help='merge scoring method: cosine (fixed) or mlp (learned)', type=str, default='cosine',
+                        choices=['cosine', 'mlp'])
     
     args = parser.parse_args()
     args.seed = set_seed(args.seed)
@@ -115,4 +137,22 @@ if __name__ == '__main__':
     device = 'cuda' if torch.cuda.is_available() else 'cpu'
     print(device)
 
+    # Start timing
+    start_time = time.time()
+    
     main(args, device)
+    
+    # End timing and calculate duration
+    end_time = time.time()
+    total_time = end_time - start_time
+    
+    # Convert to hours, minutes, seconds
+    hours = int(total_time // 3600)
+    minutes = int((total_time % 3600) // 60)
+    seconds = total_time % 60
+    
+    print(f'\n{"="*50}')
+    print(f'Total Training Time: {hours}h {minutes}m {seconds:.2f}s')
+    print(f'Total Training Time (seconds): {total_time:.2f}s')
+    print(f'{"="*50}')
+

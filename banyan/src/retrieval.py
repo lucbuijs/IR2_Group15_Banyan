@@ -3,12 +3,12 @@ from beir.retrieval.search.dense import DenseRetrievalExactSearch as DRES
 import numpy as np
 from beir.datasets.data_loader import GenericDataLoader
 from typing import List, Dict
-from models import Banyan
 from beir.retrieval.evaluation import EvaluateRetrieval
 from bpemb import BPEmb
 from tqdm import trange
 import torch
 import sys 
+import argparse
 
 
 class StrAE_DE:
@@ -40,15 +40,28 @@ class StrAE_DE:
         
         return torch.cat(corpus_embeddings, dim=0).cpu().numpy()
 
+# Parse arguments
+parser = argparse.ArgumentParser(description='Retrieval Evaluation Script')
+parser.add_argument('checkpoint', help='path to model checkpoint')
+parser.add_argument('--scoring', type=str, default='cosine', choices=['cosine', 'mlp'],
+                    help='scoring method used during training: cosine (Banyan) or mlp (BanyanMLP)')
+args = parser.parse_args()
+
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
 
-# these are the hyperparameters used in the paper (change as desired for your trained model)
-model  = Banyan(25001, 256, 128, 0.1, device).to(device)
+# Model selection based on scoring type
+if args.scoring == 'mlp':
+    from models_mlp import BanyanMLP
+    model = BanyanMLP(25001, 256, 128, 0.1, device).to(device)
+    print('Using BanyanMLP (learned merge scoring)', flush=True)
+else:
+    from models import Banyan
+    model = Banyan(25001, 256, 128, 0.1, device).to(device)
+    print('Using Banyan (cosine similarity)', flush=True)
 
 # load from checkpoint
-path = sys.argv[1]
-print('Loading model from:', path)
-checkpoint = torch.load(path)
+print('Loading model from:', args.checkpoint)
+checkpoint = torch.load(args.checkpoint)
 model.load_state_dict(checkpoint['model'])
 model = DRES(StrAE_DE(model), batch_size=1024)
 retriever = EvaluateRetrieval(model, score_function="cos_sim")
