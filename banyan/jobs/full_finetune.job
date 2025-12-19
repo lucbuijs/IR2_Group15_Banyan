@@ -14,14 +14,13 @@ module load Anaconda3/2024.06-1
 cd ~/Repo_Combined/banyan
 source activate banyan
 
-# Full fine-tuning: train everything with contrastive + reconstruction loss
+# Full fine-tuning: train everything with contrastive loss
 python src/train_retrieval.py \
     --pretrained_path checkpoints/en.pt \
     --train_path data/msmarco/prepared_data/train.jsonl \
     --dev_path data/msmarco/prepared_data/val.jsonl \
     --use_projection \
     --projection_dim 128 \
-    --recon_weight 0.5 \
     --temperature 0.05 \
     --batch_size 64 \
     --max_query_len 32 \
