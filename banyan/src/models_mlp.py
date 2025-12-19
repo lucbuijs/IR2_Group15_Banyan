@@ -52,6 +52,7 @@ class MergeScorer(nn.Module):
         return scores
 
 
+
 class BanyanMLP(nn.Module):
     """
     Banyan model with learned merge scoring.
