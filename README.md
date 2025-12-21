@@ -4,4 +4,4 @@ This repository contains the code and experiment configurations used to evaluate
 
 ## Running Experiments
 
-Navigate to the desired baseline directory and execute the relevant job script from the '''jobs folder
+Navigate to the desired baseline directory and execute the relevant job script from the jobs folder
