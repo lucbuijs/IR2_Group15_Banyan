@@ -44,12 +44,19 @@ def load_relevance(path):
             gt[q].add(d)
     return gt
 
-def embed_text(text, glove, dim=300):
+def embed_text(text, glove, dim=50):
     tokens = text.lower().split()
     vecs = [glove[t] for t in tokens if t in glove]
+
     if len(vecs) == 0:
-        return np.zeros(dim)
-    return np.mean(vecs, axis=0)
+        return np.zeros(dim, dtype=np.float32)
+
+    v = np.mean(vecs, axis=0)
+
+    if v.shape[0] != dim:    # <-- catch bad cases
+        return np.zeros(dim, dtype=np.float32)
+
+    return v
 
 def recall_at_k(retrieved_list, relevant_set, k):
     retrieved_k = retrieved_list[:k]
@@ -72,13 +79,13 @@ def ndcg_at_k(retrieved, relevant_set, k):
 def main():
 
     # Benchmark datasets:
-    dataset = "quora"
+    dataset = "quora"  # arguana | quora | nfcorpus | scifact
 
     # dim of glove embeddings
-    dim_glove = 100
+    dim_glove = 300
 
     # ---- Paths ----
-    GLOVE_PATH = f"../embeddings/glove.6B.{dim_glove}d.txt"
+    GLOVE_PATH = f"../vectors_{dim_glove}d.txt"
     CORPUS_PATH = f"../beir/{dataset}/corpus.jsonl"
     QUERIES_PATH = f"../beir/{dataset}/queries.jsonl"
     TEST_PATH = f"../beir/{dataset}/qrels/test.tsv"
@@ -110,7 +117,7 @@ def main():
 
     print("Retrieving for all queries ...")
     for qid, qtext in queries.items():
-        qvec = embed_text(qtext, glove).reshape(1, -1)
+        qvec = embed_text(qtext, glove, dim_glove).reshape(1, -1)
         qvec = np.ascontiguousarray(qvec, dtype=np.float32)
         faiss.normalize_L2(qvec)
 
